@@ -1,0 +1,52 @@
+.content-form {
+  .form-button {
+    margin-left: auto;
+    margin-top: 24px;
+    @media screen and (max-width: 1024px){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__element {
+    margin-bottom: 24px;
+    &.w-50 {
+      width: 50%;
+    }
+    &.w-100 {
+      width: 100%;
+    }
+    &.p-0 {
+      padding: 0 !important;
+    }
+    &.w-m-100 {
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+      }
+    }
+    &:nth-child(odd) {
+      padding-right: 50px;
+      @media screen and (max-width: 1024px) {
+        padding-right: 0;
+      }
+    }
+    &:nth-child(even) {
+      padding-left: 50px;
+      @media screen and (max-width: 1024px) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .content-form {
+    &__element {
+      margin-bottom: 40px;
+    }
+  }
+}

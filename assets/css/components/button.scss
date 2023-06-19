@@ -1,0 +1,89 @@
+.v-button {
+  display: flex;
+  width: 11.125rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+
+  &.primary {
+    background: $blue-button-gradient;
+  }
+
+  &.text-button {
+    width: auto;
+    height: auto;
+    border: none;
+    background: none;
+  }
+
+  &.outline-success {
+    span {
+      background: linear-gradient(270.63deg, #09FF93 9.48%, #F7FECA 90.02%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(360.22deg, rgba(1, 219, 249, 0.12) 12.85%, rgba(109, 140, 251, 0) 134.88%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px; /* control the border thickness */
+      background: linear-gradient(261.17deg, rgba(1, 241, 160, 0.4) 4.29%, rgba(1, 182, 231, 0.4) 56.73%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+  }
+
+  &.outline-primary {
+    span {
+      background: linear-gradient(347.22deg, rgba(1, 219, 249, 0.12) 19.85%, rgba(109, 140, 251, 0) 134.88%),
+      linear-gradient(118.16deg, #FEFFD7 -3.29%, #69FFE5 53.5%, #3662FF 99.36%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(360.22deg, rgba(1, 219, 249, 0.12) 12.85%, rgba(109, 140, 251, 0) 134.88%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px; /* control the border thickness */
+      background: linear-gradient(118.16deg, #FEFFD7 -3.29%, #69FFE5 53.5%, #3662FF 99.36%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  }
+
+  &.medium-text {
+    font-size: 1rem;
+  }
+
+  &.large-text {
+    font-size: 1.5rem
+  }
+
+}
+
