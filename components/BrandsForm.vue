@@ -4,7 +4,6 @@
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
             v-model="email"
-            error-message="test error"
             label="Електронна пошта"
             placeholder="Random@gmail.com"
             :isValid="isEmailValid"
@@ -13,7 +12,6 @@
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
             v-model="twitch"
-            error-message="test error"
             label="Назва каналу Twitch"
             placeholder="Random"
             :isValid="isTwitchValid"
@@ -22,7 +20,6 @@
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
             v-model="emailConfirm"
-            error-message="test error"
             label="Електронна пошта"
             placeholder="Random@gmail.com"
             :isValid="isEmailConfirmValid"
@@ -31,7 +28,6 @@
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
             v-model="twitchConfirm"
-            error-message="test error"
             label="Назва каналу Twitch"
             placeholder="Random"
             :isValid="isTwitchConfirmValid"
@@ -41,7 +37,6 @@
         <BaseTextarea
           v-model="message"
           label="Повідомлення"
-          error-message="test error"
           placeholder="Ваше повідомлення"
           :isValid="isMessageValid"
         />

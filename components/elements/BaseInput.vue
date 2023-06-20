@@ -27,7 +27,7 @@ export default {
     },
     errorMessage: {
       type: String,
-      required: true
+      default: 'Обов’язкове поле'
     },
     modelValue: {
       type: String,

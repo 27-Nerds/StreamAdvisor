@@ -1,31 +1,37 @@
 <template>
   <BaseElementWrapper
-      :label="label"
-      :is-valid="isValid"
-      :checkValidation="checkValidation"
-      :error-message="errorMessage"
+    :label="label"
+    :isValid="isValid"
+    :checkValidation="checkValidation"
+    :error-message="errorMessage"
   >
-    <textarea
-      :placeholder="placeholder"
-      :value="modelValue"
+    <input
+      type="tel"
+      class="base-input"
       @input="inputHandler"
-    ></textarea>
+      :value="modelValue"
+      :placeholder="placeholder"
+      autocomplete="tel"
+      v-mask="'+380 (##) ##-##-###'"
+    >
   </BaseElementWrapper>
 </template>
 
 <script>
 import BaseElementWrapper from "./BaseElementWrapper";
+
 export default {
-  name: "BaseTextarea",
-  components: {
-    BaseElementWrapper
-  },
+  name: "BaseInput",
   props: {
-    modelValue: {
-      type: String,
-      required: true
-    },
     label: {
+      type: String,
+      required: true,
+    },
+    errorMessage: {
+      type: String,
+      default: 'Обов’язкове поле'
+    },
+    modelValue: {
       type: String,
       required: true
     },
@@ -34,17 +40,16 @@ export default {
       required: true
     },
     isValid: {
-      type: Boolean
-    },
-    errorMessage: {
-      type: String,
-      default: 'Обов’язкове поле'
+      type: Boolean,
     }
   },
   data() {
     return {
       checkValidation: false
     }
+  },
+  components: {
+    BaseElementWrapper
   },
   methods: {
     inputHandler(event) {
@@ -55,6 +60,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
 </style>

@@ -64,7 +64,9 @@
 </template>
 
 <script>
-import { KinesisContainer, KinesisElement} from 'vue-kinesis'
+import kinesisPkg from 'vue-kinesis';
+const { KinesisContainer, KinesisElement } = kinesisPkg;
+
 export default {
   name: "Kinesis",
   components: {

@@ -373,6 +373,10 @@ export default {
       background: rgba(22, 37, 54, 0.6);
       border: 1px solid rgba(22, 37, 54, 0.6);
       backdrop-filter: blur(76.5px);
+      @media screen and (max-width: 768px) {
+        padding: 40px 16px 40px 16px;
+        border-radius: 24px;
+      }
     }
   }
 }

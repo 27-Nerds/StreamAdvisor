@@ -3,51 +3,49 @@
     <div class="content-form__wrapper">
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            error-message="test error"
+            v-model="user"
             label="ПІБ"
+            :is-valid="isUserValid"
             placeholder="Василь Шевченко"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            error-message="test error"
+            v-model="email"
+            :is-valid="isEmailValid"
             label="Електронна пошта"
             placeholder="Random@gmail.com"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            error-message="test error"
-            label="Країна"
-            placeholder="Оберіть країну"
-        />
-      </div>
-      <div class="content-form__element w-50 w-m-100">
-        <BaseInput
-            error-message="test error"
-            label="Номер телефону"
-            placeholder="+380 (00) 000-00-00"
-        />
-      </div>
-      <div class="content-form__element w-50 w-m-100">
-        <BaseInput
-            error-message="test error"
+            v-model="job"
+            :is-valid="isJobValid"
             label="Назва посади"
             placeholder="Маркетолог"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            error-message="test error"
+            v-model="companyName"
+            :is-valid="isCompanyNameValid"
             label="Назва компанії"
             placeholder="Василь та Партнери"
+        />
+      </div>
+      <div class="content-form__element w-50 w-m-100">
+        <BasePhoneInput
+            v-model="phoneNumber"
+            :is-valid="isPhoneNumberValid"
+            label="Номер телефону"
+            placeholder="+380 (00) 000-00-00"
         />
       </div>
       <div class="content-form__element w-100 p-0">
         <BaseTextarea
             v-model="message"
+            :is-valid="isMessageValid"
             label="Повідомлення"
-            error-message="test error"
             placeholder="Ваше повідомлення"
         />
       </div>
@@ -60,6 +58,7 @@
 
 <script>
 import BaseInput from "./elements/BaseInput";
+import BasePhoneInput from "./elements/BasePhoneInput";
 import BaseTextarea from "./elements/BaseTextarea";
 import VButton from "./elements/VButton";
 export default {
@@ -67,14 +66,16 @@ export default {
   components: {
     BaseInput,
     BaseTextarea,
+    BasePhoneInput,
     VButton
   },
   data() {
     return {
       email: '',
-      twitch: '',
-      emailConfirm: '',
-      twitchConfirm: '',
+      user: '',
+      job: '',
+      companyName: '',
+      phoneNumber: '',
       message: ''
     }
   },
@@ -87,14 +88,17 @@ export default {
         return false;
       }
     },
-    isEmailConfirmValid() {
-      return this.email === this.emailConfirm
+    isUserValid() {
+      return this.user !== ''
     },
-    isTwitchValid() {
-      return this.twitch !== ''
+    isJobValid() {
+      return this.job !== ''
     },
-    isTwitchConfirmValid() {
-      return this.twitchConfirm === this.twitch
+    isCompanyNameValid() {
+      return this.companyName !== ''
+    },
+    isPhoneNumberValid() {
+      return this.phoneNumber !== ''
     },
     isMessageValid() {
       return this.message !== ''
@@ -103,9 +107,10 @@ export default {
   methods: {
     submitHandler() {
       console.log('email', this.email)
-      console.log('twitch', this.twitch)
-      console.log('emailConfirm', this.emailConfirm)
-      console.log('twitchConfirm', this.twitchConfirm)
+      console.log('user', this.user)
+      console.log('job', this.job)
+      console.log('companyName', this.companyName)
+      console.log('phoneNumber', this.phoneNumber)
       console.log('message', this.message)
     }
   }

@@ -47,3 +47,14 @@
     resize: none;
   }
 }
+
+@media screen and (max-width: 768px){
+  .form-element {
+    &__label {
+      font-size: 16px;
+    }
+    &__error {
+      font-size: 12px;
+    }
+  }
+}
