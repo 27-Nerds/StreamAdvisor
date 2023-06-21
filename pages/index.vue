@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <VCursor />
     <div class="page-wrapper">
       <Header />
       <Kinesis/>
@@ -28,6 +29,7 @@ import Work from "../components/main/Work";
 import Partners from "../components/main/Partners";
 import Cases from "../components/main/Cases";
 import Contact from "../components/main/Contact";
+import VCursor from "../components/VCursor";
 export default {
   name: "index.vue",
   components: {
@@ -37,7 +39,8 @@ export default {
     Cards,
     Work,
     Partners,
-    Cases
+    Cases,
+    VCursor
   },
 }
 </script>

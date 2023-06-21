@@ -1,45 +1,85 @@
 <template>
   <div class="cards">
+
     <Card
-        v-for="card in cards"
-        :key="card.id"
-        :title="card.title"
-        :description="card.description"
-        :label="card.label"
-        :image="card.image"
+        ref='card_1'
+        :title="cards.card1.title"
+        :description="cards.card1.description"
+        :label="cards.card1.label"
+        :image="cards.card1.image"
+        :style="{
+          transform: cardTransform1,
+          transition: 'transition 0.25s ease-out'
+        }"
+    />
+    <Card
+        ref='card_2'
+        :title="cards.card2.title"
+        :description="cards.card2.description"
+        :label="cards.card2.label"
+        :image="cards.card2.image"
+        :style="{
+          transform: cardTransform2,
+          transition: 'transition 0.25s ease-out'
+        }"
     />
   </div>
 </template>
 
+<script setup>
+import Stream from "../../assets/images/1920/home/streamer-card-image.png";
+import Brand from "../../assets/images/1920/home/brand-card-image.png";
+import {useMouseInElement} from "@vueuse/core";
+const card_1 = ref(null)
+const card_2 = ref(null)
+
+const element1 = useMouseInElement(card_1)
+const element2 = useMouseInElement(card_2)
+
+const cardTransform1 = computed(() => {
+  const MAX_ROTATION = 6
+
+  const rx = (MAX_ROTATION/2 - (element1.elementY.value / element1.elementHeight.value) * MAX_ROTATION).toFixed(2)
+  const ry = ((element1.elementX.value / element1.elementWidth.value) * MAX_ROTATION - MAX_ROTATION/2).toFixed(2)
+  return element1.isOutside.value
+      ? ''
+      : `perspective(${element1.elementWidth.value}px) rotateX(${rx}deg) rotateY(${ry}deg)`
+})
+
+const cardTransform2 = computed(() => {
+  const MAX_ROTATION = 6
+
+  const rx = (MAX_ROTATION/2 - (element2.elementY.value / element2.elementHeight.value) * MAX_ROTATION).toFixed(2)
+  const ry = ((element2.elementX.value / element2.elementWidth.value) * MAX_ROTATION - MAX_ROTATION/2).toFixed(2)
+  return element2.isOutside.value ? '' : `perspective(${element2.elementWidth.value}px) rotateX(${rx}deg) rotateY(${ry}deg)`
+})
+
+const cards = {
+  card1: {
+    id: 1,
+    title: 'Mонетизуй свій стрім',
+    description: 'Обирай бренди, з якими хочеш співпрацювати, а наша система автоматично виведе рекламні прояви на твоєму стрімі.',
+    label: 'Для стрімерів',
+    image: Stream
+  },
+  card2: {
+    id: 2,
+    title: 'Реклама для брендів',
+    description: 'Ефективне просування бренду в середовищі стрімінгових платформ та доступ до широкої аудиторії глядачів.',
+    label: 'Для  брендів',
+    image: Brand
+  }
+}
+
+</script>
+
 <script>
 import Card from "../elements/Card";
-import Brand from '../../assets/images/1920/home/brand-card-image.png'
-import Stream from '../../assets/images/1920/home/streamer-card-image.png'
 export default {
   name: "Cards",
   components: {
     Card
   },
-  computed: {
-    cards() {
-      return [
-        {
-          id: 1,
-          title: 'Mонетизуй свій стрім',
-          description: 'Обирай бренди, з якими хочеш співпрацювати, а наша система автоматично виведе рекламні прояви на твоєму стрімі.',
-          label: 'Для стрімерів',
-          image: Stream
-        },
-        {
-          id: 2,
-          title: 'Реклама для брендів',
-          description: 'Ефективне просування бренду в середовищі стрімінгових платформ та доступ до широкої аудиторії глядачів.',
-          label: 'Для  брендів',
-          image: Brand
-        }
-      ]
-    }
-  }
 }
 </script>
 

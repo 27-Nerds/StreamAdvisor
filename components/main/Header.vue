@@ -35,7 +35,7 @@ export default {
     height: 100%;
     bottom: -50%;
     left: 50%;
-    transform: translate(-50%, -55%);
+    transform: translate(-50%, -63%);
     background-image: url("./assets/images/2048/home/1screen.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -96,7 +96,7 @@ export default {
     padding-top: 140px;
     &:before {
       background-image: url("./assets/images/1920/home/1screen.png");
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -57%);
     }
     &:after {
       background-image: url("./assets/images/1920/home/HeaderElipse.svg");
@@ -116,7 +116,7 @@ export default {
     padding-top: 95px;
     &:before {
       background-image: url("./assets/images/1440/home/1screen.png");
-      transform: translate(-50%, -45%);
+      transform: translate(-50%, -55%);
     }
     &:after {
       background-image: url("./assets/images/1440/home/HeaderElipse.svg");
@@ -124,10 +124,28 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1312px) {
+  .header {
+    &:before {
+      transform: translate(-50%, -72%);
+      background-image: url("./assets/images/1280/home/1screen.png");
+    }
+    &:after {
+      background-image: url("./assets/images/1280/home/HeaderElipse.svg");
+      transform: translate(-50%, 14.5%);
+    }
+    &-title {
+      font-size: 54px;
+      line-height: 150%;
+      margin-bottom: 80px;
+      margin-top: 40px;
+    }
+  }
+}
 @media screen and (max-width: 1280px){
   .header {
-    padding-top: 80px;
     &:before {
+      transform: translate(-50%, -76%);
       background-image: url("./assets/images/1280/home/1screen.png");
     }
     &:after {
@@ -148,7 +166,7 @@ export default {
     padding-top: 60px;
     padding-bottom: 80px;
     &:before {
-      transform: translate(-50%, -58%);
+      transform: translate(-50%, -67%);
       background-image: url("./assets/images/768/home/1screen.png");
       background-size: 100%;
     }

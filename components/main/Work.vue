@@ -102,6 +102,24 @@ export default {
   }
 }
 
+@media screen and (max-width: 1312px){
+  .work {
+    &-header {
+      margin-bottom: 54px;
+    }
+    &-block {
+      padding: 20px 0px 20px 16px;
+      p {
+        font-size: 24px;
+      }
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .work {
     padding-bottom: 120px;

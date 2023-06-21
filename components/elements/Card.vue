@@ -1,5 +1,7 @@
 <template>
-  <div class="card">
+  <div
+      class="card"
+  >
     <div class="card-image">
       <img
           :src="image"
@@ -16,15 +18,13 @@
   </div>
 </template>
 
+<script setup>
+const props = defineProps(['image', 'label', 'title', 'description'])
+</script>
+
 <script>
 export default {
   name: "Card",
-  props: {
-    image: String,
-    label: String,
-    title: String,
-    description: String
-  }
 }
 </script>
 

@@ -201,7 +201,7 @@ export default {
         margin-top: 400px;
       }
       &:nth-child(3) {
-        margin-top: 126px;
+        margin-top: 168px;
       }
     }
     &__gradient-1 {

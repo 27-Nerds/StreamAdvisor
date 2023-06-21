@@ -48,6 +48,23 @@
   }
 }
 
+@media screen and (max-width: 1312px) {
+  .form-element {
+    &__wrapper {
+      min-height: 52px;
+    }
+    &__label {
+      font-size: 20px;
+    }
+    &__error {
+      font-size: 14px;
+    }
+  }
+  input, textarea {
+    padding: 12px 20px;
+  }
+}
+
 @media screen and (max-width: 768px){
   .form-element {
     &__label {
