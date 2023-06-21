@@ -449,8 +449,17 @@ export default {
   }
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1313px){
   .streams {
+    &-header {
+      h1 {
+        font-size: 52px;
+      }
+      p {
+        margin-top: 32px;
+        font-size: 20px;
+      }
+    }
     &-video {
       padding-top: 120px;
       &__block {

@@ -444,6 +444,24 @@ export default {
   }
 }
 
+@media screen and (max-width: 1313px) {
+  .brands {
+    &-header {
+      &__text {
+        max-width: 600px;
+        margin-right: 70px;
+      }
+      &__title {
+        font-size: 52px;
+      }
+      &__description {
+        margin-top: 32px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .brands {
     &-stats {
