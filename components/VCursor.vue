@@ -59,7 +59,10 @@ export default {
     animateCircles();
   },
   unmounted() {
-    window.removeEventListener('mousemove')
+    window.removeEventListener('mousemove',  function(e){
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    })
   }
 }
 </script>
