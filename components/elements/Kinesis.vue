@@ -22,7 +22,7 @@
           :transformOrigin="'center center'"
           :strength="30"
           type="div">
-        <p class="kinesis-text"><span>Streamadvisor</span> допомагає знайти партнерів для співпраці зі стрімерами у всіх сферах – від геймінгу до кулінарії та музики</p>
+        <p class="kinesis-text"><span>StreamAdvisor</span> допомагає знайти партнерів для співпраці зі стрімерами у всіх сферах – від геймінгу до кулінарії та музики</p>
       </kinesis-element>
       <kinesis-element
           class="kinesis-item third-item"

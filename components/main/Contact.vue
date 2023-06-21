@@ -2,7 +2,7 @@
   <div class="main-contact">
     <div class="main-contact-wrapper">
       <h3 class="main-contact__title">Досі вагаєшся?</h3>
-      <p class="main-contact__description">StreamSdvisor – ідеальний інструмент для розвитку та просування брендів та стримерів в інтернеті.</p>
+      <p class="main-contact__description">StreamAdvisor – ідеальний інструмент для розвитку та просування брендів та стримерів в інтернеті.</p>
       <VButton classes="primary">Почати зараз</VButton>
     </div>
   </div>
