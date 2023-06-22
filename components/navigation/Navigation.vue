@@ -15,17 +15,17 @@
       </NuxtLink>
     </div>
     <div class="navigation-button">
-      <VButton :classes="'text-button medium-text'">
+      <VButton :classes="'text-button medium-text'" @click="login">
         Увійти
       </VButton>
-      <VButton :classes="'primary medium-text'">
+      <VButton :classes="'primary medium-text'" @click="register">
         Зареєструватись
       </VButton>
     </div>
     <div class="navigation-burger" @click="showNav = true">
       <img src="../../assets/images/burger.svg" alt="burger">
     </div>
-    <VButton :classes="'mobile-button primary medium-text'">
+    <VButton :classes="'mobile-button primary medium-text'" @click="register">
       Почати зараз
     </VButton>
 
@@ -55,10 +55,10 @@
           </NuxtLink>
         </div>
         <div class="mobile-navigation-button">
-          <VButton :classes="'text-button medium-text'">
+          <VButton :classes="'text-button medium-text'" @click="login">
             Увійти
           </VButton>
-          <VButton :classes="'primary medium-text'">
+          <VButton :classes="'primary medium-text'" @click="register">
             Зареєструватись
           </VButton>
         </div>
@@ -88,6 +88,12 @@ export default {
     }
   },
   methods: {
+    register() {
+      window.open('https://streamer.instreamly.com/register/', 'blank')
+    },
+    login() {
+      window.open('https://streamer.instreamly.com/login/', 'blank')
+    },
     checkWindowObject() {
       if (typeof window === 'undefined') return false
 

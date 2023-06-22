@@ -17,6 +17,9 @@ export default {
 
 <style scoped lang="scss">
 .app {
+  max-width: 2050px;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

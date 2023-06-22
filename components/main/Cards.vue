@@ -7,6 +7,7 @@
         :description="cards.card1.description"
         :label="cards.card1.label"
         :image="cards.card1.image"
+        :to="'/streams'"
         :style="{
           transform: cardTransform1,
           transition: 'transition 0.25s ease-out'
@@ -17,6 +18,7 @@
         :title="cards.card2.title"
         :description="cards.card2.description"
         :label="cards.card2.label"
+        :to="'/brands'"
         :image="cards.card2.image"
         :style="{
           transform: cardTransform2,

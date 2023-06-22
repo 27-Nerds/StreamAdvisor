@@ -9,9 +9,11 @@
       >
     </div>
     <div class="card-info">
-      <div class="card-info__label v-button outline-primary">
-        <span>{{ label }}</span>
-      </div>
+      <NuxtLink :to="to">
+        <div class="card-info__label v-button outline-primary">
+          <span>{{ label }}</span>
+        </div>
+      </NuxtLink>
       <h1 class="card-info__title">{{ title }}</h1>
       <p class="card-info__text">{{ description }}</p>
     </div>
@@ -19,7 +21,7 @@
 </template>
 
 <script setup>
-const props = defineProps(['image', 'label', 'title', 'description'])
+const props = defineProps(['image', 'label', 'title', 'description', 'to'])
 </script>
 
 <script>

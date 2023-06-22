@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <StarsLayout />
     <VCursor />
     <div class="page-wrapper">
       <Header />
@@ -10,7 +11,7 @@
           <Work />
           <Partners />
           <div class="work-block__line" />
-          <div class="work-block__ellipse"/>
+<!--          <div class="work-block__ellipse"/>-->
         </div>
         <Cases />
         <div class="cases-block__background-1" />
@@ -30,6 +31,7 @@ import Partners from "../components/main/Partners";
 import Cases from "../components/main/Cases";
 import Contact from "../components/main/Contact";
 import VCursor from "../components/VCursor";
+import StarsLayout from "../layouts/StarsLayout";
 export default {
   name: "index.vue",
   components: {
@@ -40,7 +42,8 @@ export default {
     Work,
     Partners,
     Cases,
-    VCursor
+    VCursor,
+    StarsLayout
   },
 }
 </script>

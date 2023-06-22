@@ -88,7 +88,7 @@ export default {
     padding: 650px 0;
     position: relative;
     @media screen and (max-width: 1650px) {
-      padding: 550px 0;
+      padding: 450px 0;
     }
     .kinesis-text {
       color: #D9E9ED;
@@ -106,6 +106,12 @@ export default {
     }
     .kinesis-item {
       position: absolute;
+      img {
+        border-radius: 16px;
+        @media screen and (max-width: 768px){
+          border-radius: 8px;
+        }
+      }
       @media screen and (max-width: 1650px){
         img {
           width: 213px
@@ -126,7 +132,7 @@ export default {
       }
       // верх второй
       &.third-item {
-        top: 14%;
+        top: 20%;
         left: 30%;
         @media screen and (max-width: 1100px){
           display: none;
@@ -134,7 +140,7 @@ export default {
       }
       // верх третий
       &.fourth-item {
-        top: 15%;
+        top: 24%;
         right: 30%;
         @media screen and (max-width: 1100px){
           right: 45%;
@@ -142,17 +148,17 @@ export default {
       }
       // верх четвертый
       &.fifth-item {
-        top: 25%;
+        top: 30%;
         right: 7%;
       }
       // низ первый
       &.sixth-item {
-        bottom: 20%;
+        bottom: 29%;
         left: 20%;
       }
       // низ второй
       &.seventh-item {
-        bottom: 15%;
+        bottom: 25%;
         left: 45%;
         @media screen and (max-width: 1100px){
           display: none;

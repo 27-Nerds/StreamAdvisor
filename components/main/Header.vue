@@ -111,12 +111,27 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1800px) {
+  .header {
+    &-title {
+      font-size: 72px;
+      max-width: 1100px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    &:before {
+      transform: translate(-50%, -68%);
+    }
+  }
+
+}
 @media screen and (max-width: 1440px){
   .header {
     padding-top: 95px;
     &:before {
       background-image: url("./assets/images/1440/home/1screen.png");
-      transform: translate(-50%, -55%);
+      transform: translate(-50%, -70%);
+      background-size: cover;
     }
     &:after {
       background-image: url("./assets/images/1440/home/HeaderElipse.svg");

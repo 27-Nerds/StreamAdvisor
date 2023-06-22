@@ -3,7 +3,7 @@
     <div class="main-contact-wrapper">
       <h3 class="main-contact__title">Досі вагаєшся?</h3>
       <p class="main-contact__description">StreamAdvisor – ідеальний інструмент для розвитку та просування брендів та стримерів в інтернеті.</p>
-      <VButton classes="primary">Почати зараз</VButton>
+      <VButton classes="primary" @click="register">Почати зараз</VButton>
     </div>
   </div>
 </template>
@@ -12,7 +12,12 @@
 import VButton from "../elements/VButton";
 export default {
   name: "Contact",
-  components: {VButton}
+  components: {VButton},
+  methods: {
+    register() {
+      window.open('https://streamer.instreamly.com/register/', 'blank')
+    },
+  }
 }
 </script>
 

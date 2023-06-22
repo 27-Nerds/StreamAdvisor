@@ -50,7 +50,7 @@
         <div class="streams-form">
           <div class="streams-form__wrapper">
             <h3>Маєш питання?</h3>
-            <p>Скористайся формою нижче або знайди відповіді на сторінці <span>FAQ</span> </p>
+            <p>Скористайся формою нижче або знайди відповіді на сторінці <NuxtLink to="/faq"><span>FAQ</span></NuxtLink> </p>
             <div class="streams-form__component-wrapper">
               <div class="streams-form__bg-gradient" id="streams-form__bg-gradient">
                 <img src="../assets/images/2048/streamers/streamers-form.png" alt="">
@@ -67,7 +67,7 @@
         <div class="streams-contact">
           <h3>Не вагайся!</h3>
           <p>Ти сам контролюєш все і вирішуєш, з якими брендами працювати і коли.</p>
-          <VButton classes="primary">Почати зараз</VButton>
+          <VButton classes="primary" @click="register">Почати зараз</VButton>
         </div>
         <div class="streams-footer-bg">
           <img src="../assets/images/2048/streamers/5-footer.png" alt="">
@@ -88,6 +88,11 @@ export default {
     StarsLayout,
     StreamsForm
   },
+  methods: {
+    register() {
+      window.open('https://streamer.instreamly.com/register/', 'blank')
+    },
+  }
 }
 </script>
 

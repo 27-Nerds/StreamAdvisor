@@ -29,9 +29,11 @@ $shadows-big:    multiple-box-shadow(100)
 .stars-animation
   position: fixed
   top: 0
-  left: 0
-  width: 100vw
   z-index: -1
+  left: 50%
+  width: 100%
+  max-width: 2050px
+  transform: translateX(-50%)
 #stars
   width: 1px
   height: 1px
