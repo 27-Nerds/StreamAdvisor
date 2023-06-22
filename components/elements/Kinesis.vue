@@ -6,8 +6,10 @@
         event="scroll">
       <kinesis-element
           class="kinesis-item first-item"
-          :transformOrigin="'-90% -50%'"
-          :strength="10"
+          :transformOrigin="'100% -50%'"
+          :strength="40"
+          :originY="0"
+          :event="'scroll'"
           type="translate">
         <img src="../../assets/images/gifs/1.gif" />
       </kinesis-element>
@@ -26,8 +28,9 @@
       </kinesis-element>
       <kinesis-element
           class="kinesis-item third-item"
-          :transformOrigin="'40% -40%'"
-          :strength="40"
+          :transformOrigin="'80% -40%'"
+          :originY="0"
+          :strength="100"
           type="translate">
         <img src="../../assets/images/gifs/3.gif" />
       </kinesis-element>
@@ -64,8 +67,8 @@
 </template>
 
 <script>
-import kinesisPkg from 'vue-kinesis';
-const { KinesisContainer, KinesisElement } = kinesisPkg;
+import {KinesisContainer, KinesisElement} from 'vue-kinesis';
+// const { KinesisContainer, KinesisElement } = kinesisPkg;
 
 export default {
   name: "Kinesis",
@@ -121,19 +124,25 @@ export default {
       &.first-item {
         left: 4%;
         top: 35%;
-        @media screen and (max-width: 1100px){
-          top: 30%;
+        @media screen and (max-width: 1300px){
+            top: 25%
         }
       }
       // низ третий
       &.second-item {
         bottom: 27%;
         right: 15%;
+        @media screen and (max-width: 1300px){
+          botton: 17%
+        }
       }
       // верх второй
       &.third-item {
         top: 20%;
         left: 30%;
+        @media screen and (max-width: 1300px){
+          top: 15%
+        }
         @media screen and (max-width: 1100px){
           display: none;
         }
@@ -142,6 +151,9 @@ export default {
       &.fourth-item {
         top: 24%;
         right: 30%;
+        @media screen and (max-width: 1300px){
+          top: 14%
+        }
         @media screen and (max-width: 1100px){
           right: 45%;
         }
@@ -150,16 +162,25 @@ export default {
       &.fifth-item {
         top: 30%;
         right: 7%;
+        @media screen and (max-width: 1300px){
+          top: 20%
+        }
       }
       // низ первый
       &.sixth-item {
         bottom: 29%;
         left: 20%;
+        @media screen and (max-width: 1300px){
+          bottom: 23%
+        }
       }
       // низ второй
       &.seventh-item {
         bottom: 25%;
         left: 45%;
+        @media screen and (max-width: 1300px){
+          bottom: 16%
+        }
         @media screen and (max-width: 1100px){
           display: none;
         }

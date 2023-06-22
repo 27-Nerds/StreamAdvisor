@@ -8,7 +8,7 @@
       </div>
       <div class="work-block work-block__second">
         <img src="../../assets/images/link.svg" alt="">
-        <p>Підключи Streamadvisor до своєї платформи</p>
+        <p>Підключи StreamAdvisor до своєї платформи</p>
       </div>
       <div class="work-block work-block__third">
         <img src="../../assets/images/choose.svg" alt="">
