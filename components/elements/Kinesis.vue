@@ -1,12 +1,13 @@
 <template>
   <div class="kinesis-animation">
     <kinesis-container
-        perspective="100"
+        perspective="1"
+        :duration="100"
         class="kinesis-container"
         event="scroll">
       <kinesis-element
           class="kinesis-item first-item"
-          :transformOrigin="'100% -50%'"
+          :transformOrigin="'-10% -50%'"
           :strength="40"
           :originY="0"
           :event="'scroll'"
@@ -30,7 +31,7 @@
           class="kinesis-item third-item"
           :transformOrigin="'80% -40%'"
           :originY="0"
-          :strength="100"
+          :strength="20"
           type="translate">
         <img src="../../assets/images/gifs/3.gif" />
       </kinesis-element>
