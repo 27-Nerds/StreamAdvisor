@@ -73,10 +73,10 @@ import pkg from 'vue-kinesis';
 
 export default {
   name: "Kinesis",
-  components: {
-    KinesisContainer: pkg.KinesisContainer,
-    KinesisElement: pkg.KinesisElement
-  }
+  // components: {
+  //   KinesisContainer: pkg.KinesisContainer,
+  //   KinesisElement: pkg.KinesisElement
+  // }
 }
 </script>
 

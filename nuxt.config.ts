@@ -5,6 +5,7 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
     // @ts-ignore
     plugins: [
-        {src: './plugins/mask', ssr: false}
+        {src: './plugins/mask', ssr: false},
+        {src: './plugins/kinesis', ssr: false}
     ]
 })
