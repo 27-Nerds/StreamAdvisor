@@ -36,7 +36,7 @@ export default {
     bottom: -50%;
     left: 50%;
     transform: translate(-50%, -63%);
-    background-image: url("./assets/images/2048/home/1screen.png");
+    background-image: url("../../assets/images/2048/home/1screen.png");
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;

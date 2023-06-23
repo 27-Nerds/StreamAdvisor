@@ -97,6 +97,12 @@ export default {
       console.log('emailConfirm', this.emailConfirm)
       console.log('twitchConfirm', this.twitchConfirm)
       console.log('message', this.message)
+      this.$mail.send({
+        config: 'support',
+        from: this.email,
+        subject: 'Contact form message',
+        text:  `${this.message}`,
+      })
     }
   }
 }

@@ -28,7 +28,7 @@ export default {
   background-position: center bottom;
   padding-bottom: 180px;
   padding-top: 270px;
-  background-size: 1000px;
+  background-size: 1300px;
   position: relative;
   &-wrapper {
     max-width: 546px;
