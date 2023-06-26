@@ -315,15 +315,15 @@ export default {
     }
     &__block {
       display: flex;
-      max-width: 640px;
+      max-width: 720px;
       flex-wrap: wrap;
     }
     &__item {
-      padding: 20px 40px;
-      width: 320px;
+      padding: 20px 32px;
+      width: 350px;
 
       img {
-        width: 160px;
+        width: 140px;
       }
       p {
         margin-top: 20px;
@@ -477,7 +477,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1270px){
+@media screen and (max-width: 1330px){
   .brands {
     &-info {
       &__wrapper {
@@ -726,9 +726,13 @@ export default {
         width: unset;
         padding: 16px 24px;
         display: flex;
+        align-items: center;
         img {
           width: 72px;
           margin-right: 24px;
+        }
+        p {
+          margin-top: 0;
         }
       }
     }

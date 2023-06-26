@@ -30,7 +30,7 @@ export default {
 
 <style scoped lang="scss">
 .work {
-  max-width: 615px;
+  max-width: 800px;
   padding: 15px 15px 250px 15px;
   margin-left: auto;
   margin-right: auto;
@@ -71,8 +71,8 @@ export default {
 
     }
     img {
-      width: 240px;
-      height: 240px;
+      width: 200px;
+      height: 200px;
       margin-right: 16px;
     }
     p {
@@ -90,13 +90,25 @@ export default {
   }
 }
 
+@media screen and (max-width: 1650px) {
+  .work {
+    padding-bottom: 160px;
+    &-block {
+      img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .work {
     padding-bottom: 160px;
     &-block {
       img {
-        width: 160px;
-        height: 160px;
+        width: 120px;
+        height: 120px;
       }
     }
   }

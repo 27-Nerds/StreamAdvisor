@@ -9,6 +9,8 @@ export default defineNuxtConfig({
         {src: './plugins/kinesis', ssr: false}
     ],
     modules: [
+        '@nuxtjs/device',
+        'nuxt-gtag',
        [ 'nuxt-mail', {
            message: [
                { name: 'client', to: 'contact@foo.de' },
@@ -24,4 +26,7 @@ export default defineNuxtConfig({
            },
        }]
     ],
+    gtag: {
+        id: ''
+    }
 })

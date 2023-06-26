@@ -36,21 +36,21 @@
           <img src="../../assets/images/navigation/Logo.svg" alt="logo">
         </NuxtLink>
         <div class="mobile-navigation-list">
-          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/streams">
+          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/streams" @click="showNav = false">
             Стрімерам
           </NuxtLink>
-          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/brands">
+          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/brands" @click="showNav = false">
             Брендам
           </NuxtLink>
-          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/faq">
+          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/faq" @click="showNav = false">
             FAQ
           </NuxtLink>
         </div>
         <div class="mobile-navigation-policy">
-          <NuxtLink class="navigation-policy-item" to="/policy" :activeClass="'active'">
+          <NuxtLink class="navigation-policy-item" to="/policy" :activeClass="'active'" @click="showNav = false">
             Privacy Policy
           </NuxtLink>
-          <NuxtLink class="navigation-policy-item" to="terms" :activeClass="'active'">
+          <NuxtLink class="navigation-policy-item" to="terms" :activeClass="'active'" @click="showNav = false">
             Terms of use
           </NuxtLink>
         </div>
@@ -90,9 +90,11 @@ export default {
   methods: {
     register() {
       window.open('https://streamer.instreamly.com/register/', 'blank')
+      this.showNav = false
     },
     login() {
       window.open('https://streamer.instreamly.com/login/', 'blank')
+      this.showNav = false
     },
     checkWindowObject() {
       if (typeof window === 'undefined') return false
@@ -164,7 +166,7 @@ export default {
   .mobile-navigation {
     display: block;
     position: fixed;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0px;
     width: 210px;
@@ -193,7 +195,7 @@ export default {
       align-items: flex-start;
       justify-content: center;
       flex-direction: column;
-      margin-bottom: 92px;
+      margin-bottom: 24px;
       .navigation-list__item {
         margin-bottom: 32px;
         &:last-child {
@@ -205,7 +207,6 @@ export default {
       padding: 25px 5px;
       border-top: 1px solid #5B6793;
       border-bottom: 1px solid #5B6793;
-      margin-bottom: 53px;
       .navigation-policy-item {
         color: #D9E9ED;
         cursor: pointer;
@@ -216,15 +217,16 @@ export default {
     }
   }
   .mobile-navigation-button {
+    padding: 25px 0;
     .v-button.text-button {
       margin-bottom: 32px;
-      padding: 0;
+      padding: 0 0 0 5px;
       color: #69FFE5
     }
     .v-button.primary {
-      width: 162px;
+      width: 100%;
       height: 43px;
-      font-size: 16px;
+      font-size: 14px;
       padding: 16px 12px;
       span {
         font-weight: 500;

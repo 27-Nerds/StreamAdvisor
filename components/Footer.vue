@@ -6,7 +6,7 @@
         <img src="../assets/images/copy.svg" alt="">
         2023 StreamAdvisor
       </span>
-      <span class="footer-info__email">hello_adviser@gmail.com</span>
+      <span class="footer-info__email">welcome@streamadvisor.com.ua</span>
     </div>
     <div class="footer-links">
       <NuxtLink class="footer-link" to="/policy">

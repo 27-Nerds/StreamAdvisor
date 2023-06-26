@@ -32,28 +32,36 @@
 import Stream from "../../assets/images/1920/home/streamer-card-image.png";
 import Brand from "../../assets/images/1920/home/brand-card-image.png";
 import {useMouseInElement} from "@vueuse/core";
+
 const card_1 = ref(null)
 const card_2 = ref(null)
-
+const { $device } = useNuxtApp()
 const element1 = useMouseInElement(card_1)
 const element2 = useMouseInElement(card_2)
 
 const cardTransform1 = computed(() => {
-  const MAX_ROTATION = 6
+  if ($device.isDesktop && $device.isChrome) {
 
-  const rx = (MAX_ROTATION/2 - (element1.elementY.value / element1.elementHeight.value) * MAX_ROTATION).toFixed(2)
-  const ry = ((element1.elementX.value / element1.elementWidth.value) * MAX_ROTATION - MAX_ROTATION/2).toFixed(2)
-  return element1.isOutside.value
-      ? ''
-      : `perspective(${element1.elementWidth.value}px) rotateX(${rx}deg) rotateY(${ry}deg)`
+    const MAX_ROTATION = 6
+
+    const rx = (MAX_ROTATION/2 - (element1.elementY.value / element1.elementHeight.value) * MAX_ROTATION).toFixed(2)
+    const ry = ((element1.elementX.value / element1.elementWidth.value) * MAX_ROTATION - MAX_ROTATION/2).toFixed(2)
+    return element1.isOutside.value
+        ? ''
+        : `perspective(${element1.elementWidth.value}px) rotateX(${rx}deg) rotateY(${ry}deg)`
+  }
+  return ''
 })
 
 const cardTransform2 = computed(() => {
-  const MAX_ROTATION = 6
+  if ($device.isDesktop && $device.isChrome) {
+    const MAX_ROTATION = 6
 
-  const rx = (MAX_ROTATION/2 - (element2.elementY.value / element2.elementHeight.value) * MAX_ROTATION).toFixed(2)
-  const ry = ((element2.elementX.value / element2.elementWidth.value) * MAX_ROTATION - MAX_ROTATION/2).toFixed(2)
-  return element2.isOutside.value ? '' : `perspective(${element2.elementWidth.value}px) rotateX(${rx}deg) rotateY(${ry}deg)`
+    const rx = (MAX_ROTATION/2 - (element2.elementY.value / element2.elementHeight.value) * MAX_ROTATION).toFixed(2)
+    const ry = ((element2.elementX.value / element2.elementWidth.value) * MAX_ROTATION - MAX_ROTATION/2).toFixed(2)
+    return element2.isOutside.value ? '' : `perspective(${element2.elementWidth.value}px) rotateX(${rx}deg) rotateY(${ry}deg)`
+  }
+  return  ''
 })
 
 const cards = {
@@ -87,7 +95,7 @@ export default {
 
 <style scoped lang="scss">
 .cards {
-  padding-top: 180px;
+  padding-top: 70px;
   padding-bottom: 180px;
   background-image: url("../../assets/images/2048/home/under-cards.png");
   background-repeat: no-repeat;

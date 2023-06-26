@@ -10,7 +10,7 @@
         <div class="work-block__backgrounds">
           <Work />
           <Partners />
-          <div class="work-block__line" />
+<!--          <div class="work-block__line" />-->
 <!--          <div class="work-block__ellipse"/>-->
         </div>
         <Cases />

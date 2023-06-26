@@ -6,6 +6,18 @@
   </div>
 </template>
 
+<script setup>
+useHead({
+  meta: [
+    { name: 'title', content: 'StreamAdvisor' },
+    { name: 'description', content: 'Коли бренд зустрічається з стрімерами' },
+    { property: 'og:title', content: `StreamAdvisor` },
+    { property: 'og:description', content: `Коли бренд зустрічається з стрімерами` },
+  ],
+})
+
+</script>
+
 <script>
 import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/Footer";
