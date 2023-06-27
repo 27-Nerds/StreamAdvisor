@@ -73,7 +73,7 @@
           <img src="../assets/images/2048/streamers/5-footer.png" alt="">
         </div>
       </div>
-      <VMessage message="Ваше повідомлення відправленно!" :show-message="showMessage"/>
+      <VMessage message="Ваше повідомлення відправлено!" :show-message="showMessage"/>
     </div>
   </div>
 </template>
