@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     // @ts-ignore
     plugins: [
         {src: './plugins/mask', ssr: false},
-        {src: './plugins/kinesis', ssr: false}
+        {src: './plugins/kinesis', ssr: false},
+        {src: './plugins/apiInstance', ssr: false}
     ],
     modules: [
         '@nuxtjs/device',

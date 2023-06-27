@@ -183,6 +183,7 @@ export default {
         height: 120px;
       }
       p {
+        text-align: center;
         font-size: 20px;
       }
     }

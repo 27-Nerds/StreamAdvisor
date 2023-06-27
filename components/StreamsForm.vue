@@ -1,5 +1,5 @@
 <template>
-  <form class="content-form" @submit.prevent="submitHandler">
+  <form class="content-form" @submit.prevent="submitHandler" ref="form">
     <div class="content-form__wrapper">
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
@@ -11,26 +11,26 @@
       </div>
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
+            v-model="youtube"
+            label="Назва каналу Youtube"
+            placeholder="Random"
+            :isValid="isYoutubeValid"
+        />
+      </div>
+      <div class="content-form__element w-50 w-m-100">
+        <BaseInput
+            v-model="discord"
+            label="Discord ID"
+            placeholder="random#1234"
+            :isValid="isDiscordValid"
+        />
+      </div>
+      <div class="content-form__element w-50 w-m-100">
+        <BaseInput
             v-model="twitch"
             label="Назва каналу Twitch"
             placeholder="Random"
             :isValid="isTwitchValid"
-        />
-      </div>
-      <div class="content-form__element w-50 w-m-100">
-        <BaseInput
-            v-model="emailConfirm"
-            label="Електронна пошта"
-            placeholder="Random@gmail.com"
-            :isValid="isEmailConfirmValid"
-        />
-      </div>
-      <div class="content-form__element w-50 w-m-100">
-        <BaseInput
-            v-model="twitchConfirm"
-            label="Назва каналу Twitch"
-            placeholder="Random"
-            :isValid="isTwitchConfirmValid"
         />
       </div>
       <div class="content-form__element w-100 p-0">
@@ -52,20 +52,24 @@
 import BaseInput from "./elements/BaseInput";
 import BaseTextarea from "./elements/BaseTextarea";
 import VButton from "./elements/VButton";
+import VMessage from "./VMessage.vue";
 export default {
   name: "BrandsForm",
   components: {
     BaseInput,
     BaseTextarea,
-    VButton
+    VButton,
+    VMessage
   },
   data() {
     return {
       email: '',
       twitch: '',
-      emailConfirm: '',
-      twitchConfirm: '',
-      message: ''
+      discord: '',
+      youtube: '',
+      message: '',
+      requestMessage: {},
+      showMessage: false
     }
   },
   computed: {
@@ -77,32 +81,32 @@ export default {
         return false;
       }
     },
-    isEmailConfirmValid() {
-      return this.email === this.emailConfirm
+    isYoutubeValid() {
+      return this.youtube !== ''
     },
     isTwitchValid() {
       return this.twitch !== ''
     },
-    isTwitchConfirmValid() {
-      return this.twitchConfirm === this.twitch
+    isDiscordValid() {
+      return this.discord !== ''
     },
     isMessageValid() {
       return this.message !== ''
     }
   },
   methods: {
-    submitHandler() {
-      console.log('email', this.email)
-      console.log('twitch', this.twitch)
-      console.log('emailConfirm', this.emailConfirm)
-      console.log('twitchConfirm', this.twitchConfirm)
-      console.log('message', this.message)
-      this.$mail.send({
-        config: 'support',
-        from: this.email,
-        subject: 'Contact form message',
-        text:  `${this.message}`,
-      })
+    async submitHandler() {
+      const formData = new FormData()
+      formData.append('email', this.email)
+      formData.append('twitch', this.twitch)
+      formData.append('youtube', this.youtube)
+      formData.append('discord', this.discord)
+      formData.append('message', this.message)
+      const response = await this.$axios.post('https://formspree.io/f/mleyrnbg', formData)
+      if (response.data.ok) {
+        this.$emit('showMessage', true)
+        this.$refs.form.reset()
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <form class="content-form" @submit.prevent="submitHandler">
+  <form class="content-form" @submit.prevent="submitHandler" ref="form">
     <div class="content-form__wrapper">
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
@@ -62,7 +62,7 @@ import BasePhoneInput from "./elements/BasePhoneInput";
 import BaseTextarea from "./elements/BaseTextarea";
 import VButton from "./elements/VButton";
 export default {
-  name: "StreamsForm",
+  name: "BrandsForm",
   components: {
     BaseInput,
     BaseTextarea,
@@ -105,13 +105,19 @@ export default {
     }
   },
   methods: {
-    submitHandler() {
-      console.log('email', this.email)
-      console.log('user', this.user)
-      console.log('job', this.job)
-      console.log('companyName', this.companyName)
-      console.log('phoneNumber', this.phoneNumber)
-      console.log('message', this.message)
+    async submitHandler() {
+      const formData = new FormData()
+      formData.append('email', this.email)
+      formData.append('user', this.user)
+      formData.append('job', this.job)
+      formData.append('companyName', this.companyName)
+      formData.append('phoneNumber', this.phoneNumber)
+      formData.append('message', this.message)
+      const response = await this.$axios.post('https://formspree.io/f/mleyrnbg', formData)
+      if (response.data.ok) {
+        this.$emit('showMessage', true)
+        this.$refs.form.reset()
+      }
     }
   }
 }

@@ -82,22 +82,38 @@
             <img src="../assets/images/2048/brands/brands-form.png" alt="">
           </div>
           <div class="brands-form__component">
-            <BrandsForm />
+            <BrandsForm  @showMessage="showMessageHandler"/>
           </div>
         </div>
       </div>
     </div>
+    <VMessage message="Ваше повідомлення відправленно!" :show-message="showMessage"/>
   </div>
 </template>
 
 <script>
 import StarsLayout from "../layouts/StarsLayout";
 import BrandsForm from "../components/BrandsForm";
+import VMessage from "../components/VMessage.vue";
 export default {
   name: "brands",
   components: {
+    VMessage,
     StarsLayout,
     BrandsForm
+  },
+  data() {
+    return {
+      showMessage: false
+    }
+  },
+  methods: {
+    showMessageHandler() {
+      this.showMessage = true
+      setTimeout(() => {
+        this.showMessage = false
+      }, 3000)
+    }
   }
 }
 </script>

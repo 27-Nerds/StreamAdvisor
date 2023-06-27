@@ -59,7 +59,7 @@
                 <img src="../assets/images/2048/streamers/bg-spheres.png" alt="">
               </div>
               <div class="streams-form__component">
-                <StreamsForm />
+                <StreamsForm  @showMessage="showMessageHandler"/>
               </div>
             </div>
           </div>
@@ -73,6 +73,7 @@
           <img src="../assets/images/2048/streamers/5-footer.png" alt="">
         </div>
       </div>
+      <VMessage message="Ваше повідомлення відправленно!" :show-message="showMessage"/>
     </div>
   </div>
 </template>
@@ -81,17 +82,30 @@
 import StarsLayout from "../layouts/StarsLayout";
 import VButton from "../components/elements/VButton";
 import StreamsForm from "../components/StreamsForm";
+import VMessage from "../components/VMessage.vue";
 export default {
   name: "streams",
   components: {
+    VMessage,
     VButton,
     StarsLayout,
     StreamsForm
+  },
+  data() {
+    return {
+      showMessage:false
+    }
   },
   methods: {
     register() {
       window.open('https://streamer.instreamly.com/register/', 'blank')
     },
+    showMessageHandler() {
+      this.showMessage = true
+      setTimeout(() => {
+        this.showMessage = false
+      }, 3000)
+    }
   }
 }
 </script>
