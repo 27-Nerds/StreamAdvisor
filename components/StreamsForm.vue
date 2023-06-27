@@ -3,50 +3,42 @@
     <div class="content-form__wrapper">
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            v-model="user"
-            label="ПІБ"
-            :is-valid="isUserValid"
-            placeholder="Василь Шевченко"
-        />
-      </div>
-      <div class="content-form__element w-50 w-m-100">
-        <BaseInput
             v-model="email"
-            :is-valid="isEmailValid"
             label="Електронна пошта"
             placeholder="Random@gmail.com"
+            :isValid="isEmailValid"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            v-model="job"
-            :is-valid="isJobValid"
-            label="Назва посади"
-            placeholder="Маркетолог"
+            v-model="twitch"
+            label="Назва каналу Twitch"
+            placeholder="Random"
+            :isValid="isTwitchValid"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
         <BaseInput
-            v-model="companyName"
-            :is-valid="isCompanyNameValid"
-            label="Назва компанії"
-            placeholder="Василь та Партнери"
+            v-model="emailConfirm"
+            label="Електронна пошта"
+            placeholder="Random@gmail.com"
+            :isValid="isEmailConfirmValid"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
-        <BasePhoneInput
-            v-model="phoneNumber"
-            :is-valid="isPhoneNumberValid"
-            label="Номер телефону"
-            placeholder="+380 (00) 000-00-00"
+        <BaseInput
+            v-model="twitchConfirm"
+            label="Назва каналу Twitch"
+            placeholder="Random"
+            :isValid="isTwitchConfirmValid"
         />
       </div>
       <div class="content-form__element w-100 p-0">
         <BaseTextarea
             v-model="message"
-            :is-valid="isMessageValid"
             label="Повідомлення"
             placeholder="Ваше повідомлення"
+            :isValid="isMessageValid"
         />
       </div>
       <VButton class="outline-primary form-button">
@@ -58,24 +50,21 @@
 
 <script>
 import BaseInput from "./elements/BaseInput";
-import BasePhoneInput from "./elements/BasePhoneInput";
 import BaseTextarea from "./elements/BaseTextarea";
 import VButton from "./elements/VButton";
 export default {
-  name: "StreamsForm",
+  name: "BrandsForm",
   components: {
     BaseInput,
     BaseTextarea,
-    BasePhoneInput,
     VButton
   },
   data() {
     return {
       email: '',
-      user: '',
-      job: '',
-      companyName: '',
-      phoneNumber: '',
+      twitch: '',
+      emailConfirm: '',
+      twitchConfirm: '',
       message: ''
     }
   },
@@ -88,17 +77,14 @@ export default {
         return false;
       }
     },
-    isUserValid() {
-      return this.user !== ''
+    isEmailConfirmValid() {
+      return this.email === this.emailConfirm
     },
-    isJobValid() {
-      return this.job !== ''
+    isTwitchValid() {
+      return this.twitch !== ''
     },
-    isCompanyNameValid() {
-      return this.companyName !== ''
-    },
-    isPhoneNumberValid() {
-      return this.phoneNumber !== ''
+    isTwitchConfirmValid() {
+      return this.twitchConfirm === this.twitch
     },
     isMessageValid() {
       return this.message !== ''
@@ -107,11 +93,16 @@ export default {
   methods: {
     submitHandler() {
       console.log('email', this.email)
-      console.log('user', this.user)
-      console.log('job', this.job)
-      console.log('companyName', this.companyName)
-      console.log('phoneNumber', this.phoneNumber)
+      console.log('twitch', this.twitch)
+      console.log('emailConfirm', this.emailConfirm)
+      console.log('twitchConfirm', this.twitchConfirm)
       console.log('message', this.message)
+      this.$mail.send({
+        config: 'support',
+        from: this.email,
+        subject: 'Contact form message',
+        text:  `${this.message}`,
+      })
     }
   }
 }

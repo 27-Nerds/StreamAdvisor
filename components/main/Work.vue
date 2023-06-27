@@ -72,7 +72,6 @@ export default {
     }
     img {
       width: 200px;
-      height: 200px;
       margin-right: 16px;
     }
     p {
@@ -90,13 +89,32 @@ export default {
   }
 }
 
+@media screen and (max-width: 1750px) {
+  .work {
+    max-width: 500px;
+    &-header {
+      margin-bottom: 52px;
+    }
+    &-block {
+      padding: 24px 0 24px 16px;
+      p {
+        font-size: 20px;
+      }
+      img {
+        width: 100px;
+
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1650px) {
   .work {
     padding-bottom: 160px;
     &-block {
       img {
-        width: 140px;
-        height: 140px;
+        width: 100px;
+        height: 100px;
       }
     }
   }

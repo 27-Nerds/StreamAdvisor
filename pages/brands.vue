@@ -369,7 +369,7 @@ export default {
       margin-right: auto;
       max-width: 1248px;
       border-radius: 40px;
-      padding: 70px 56px 70px 56px;
+      padding: 56px 56px 56px 56px;
       background: rgba(22, 37, 54, 0.6);
       border: 1px solid rgba(22, 37, 54, 0.6);
       backdrop-filter: blur(76.5px);
