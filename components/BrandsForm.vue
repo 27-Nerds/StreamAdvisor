@@ -113,7 +113,7 @@ export default {
       formData.append('companyName', this.companyName)
       formData.append('phoneNumber', this.phoneNumber)
       formData.append('message', this.message)
-      const response = await this.$axios.post('https://formspree.io/f/mleyrnbg', formData)
+      const response = await this.$axios.post('https://formspree.io/f/mknlwqkz', formData)
       if (response.data.ok) {
         this.$emit('showMessage', true)
         this.$refs.form.reset()

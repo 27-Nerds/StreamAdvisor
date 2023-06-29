@@ -102,7 +102,7 @@ export default {
       formData.append('youtube', this.youtube)
       formData.append('discord', this.discord)
       formData.append('message', this.message)
-      const response = await this.$axios.post('https://formspree.io/f/mleyrnbg', formData)
+      const response = await this.$axios.post('https://formspree.io/f/mnqkaglw', formData)
       if (response.data.ok) {
         this.$emit('showMessage', true)
         this.$refs.form.reset()
