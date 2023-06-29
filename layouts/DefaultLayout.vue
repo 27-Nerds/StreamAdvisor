@@ -16,9 +16,6 @@ useHead({
     { property: 'og:description', content: `Коли бренд зустрічається з стрімерами` },
     { property: 'keywords', content: 'Стрімінг, Стрімери, Стрімери Україна, Стрімери заробіток, Як заробляти на стрімах, Реклама у твіч, Реклама на твічі, Реклама у twitch, Спонсорство стрімерів, Стрімінгові сервіси, Інфлюенсери, Трафік Twitch' }
   ],
-  link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
-  ]
 })
 
 </script>
