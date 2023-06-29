@@ -24,7 +24,7 @@ export default {
   text-align: center;
   position: relative;
   &-wrapper {
-    padding: 0px 0 260px;
+    padding: 0px 0 40px;
   }
   &-header {
     font-style: normal;

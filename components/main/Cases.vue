@@ -7,13 +7,16 @@
             :effect="'cards'"
             :grabCursor="true"
             :modules="modules"
+            navigation
             class="mySwiper"
         >
           <swiper-slide>
             <div class="cases-slide">
               <div class="cases-slide__wrapper">
                 <div class="cases-slide__video">
-                  <img src="../../assets/images/video-preview.svg" alt="">
+                  <iframe width="100%" height="100%"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  </iframe>
                 </div>
                 <p class="cases-slide__title">Danio</p>
                 <p class="cases-slide__description">Кампанія “Малий голод” для Danone</p>
@@ -24,7 +27,9 @@
             <div class="cases-slide">
               <div class="cases-slide__wrapper">
                 <div class="cases-slide__video">
-                  <img src="../../assets/images/video-preview.svg" alt="">
+                  <iframe width="100%" height="100%"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  </iframe>
                 </div>
                 <p class="cases-slide__title">Danio</p>
                 <p class="cases-slide__description">Кампанія “Малий голод” для Danone</p>
@@ -35,7 +40,9 @@
             <div class="cases-slide">
               <div class="cases-slide__wrapper">
                 <div class="cases-slide__video">
-                  <img src="../../assets/images/video-preview.svg" alt="">
+                  <iframe width="100%" height="100%"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  </iframe>
                 </div>
                 <p class="cases-slide__title">Danio</p>
                 <p class="cases-slide__description">Кампанія “Малий голод” для Danone</p>
@@ -46,7 +53,9 @@
             <div class="cases-slide">
               <div class="cases-slide__wrapper">
                 <div class="cases-slide__video">
-                  <img src="../../assets/images/video-preview.svg" alt="">
+                  <iframe width="100%" height="100%"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  </iframe>
                 </div>
                 <p class="cases-slide__title">Danio</p>
                 <p class="cases-slide__description">Кампанія “Малий голод” для Danone</p>
@@ -57,7 +66,9 @@
             <div class="cases-slide">
               <div class="cases-slide__wrapper">
                 <div class="cases-slide__video">
-                  <img src="../../assets/images/video-preview.svg" alt="">
+                  <iframe width="100%" height="100%"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  </iframe>
                 </div>
                 <p class="cases-slide__title">Danio</p>
                 <p class="cases-slide__description">Кампанія “Малий голод” для Danone</p>
@@ -68,7 +79,9 @@
             <div class="cases-slide">
               <div class="cases-slide__wrapper">
                 <div class="cases-slide__video">
-                  <img src="../../assets/images/video-preview.svg" alt="">
+                  <iframe width="100%" height="100%"
+                          src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  </iframe>
                 </div>
                 <p class="cases-slide__title">Danio</p>
                 <p class="cases-slide__description">Кампанія “Малий голод” для Danone</p>
@@ -83,6 +96,8 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper'
+import 'swiper/css/navigation';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -100,7 +115,7 @@ export default {
   },
   setup() {
     return {
-      modules: [EffectCards, Controller]
+      modules: [EffectCards, Controller, Navigation]
     };
   },
 };
@@ -149,9 +164,24 @@ export default {
     }
     &__video {
       width: 100%;
-      img {
+      iframe {
         width: 100%;
+        height: 100%;
+        min-height: 409px;
+        border: none;
         border-radius: 36px!important;
+        @media screen and (max-width: 1400px){
+          min-height: 300px;
+        }
+        @media screen and (max-width: 1100px){
+          min-height: 280px;
+        }
+        @media screen and (max-width: 1024px){
+          min-height: 291px;
+        }
+        @media screen and (max-width: 700px){
+          min-height: 203px;
+        }
       }
     }
     &__title {
@@ -178,7 +208,7 @@ export default {
 .swiper {
   width: 100%;
   height: 100%;
-  padding: 50px 350px;
+  padding: 50px 350px 150px;
 }
 
 .swiper-slide {
@@ -241,10 +271,34 @@ export default {
 
 @media screen and (max-width: 650px) {
   .swiper {
+    max-width: 383px;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 42px;
     padding-right: 42px;
   }
+}
+.swiper-button-next, .swiper-button-prev {
+  outline: none;
+  width: 40px !important;
+  height: 40px !important;
+  top: unset;
+  bottom:  40px;
+  @media screen and (max-width: 650px){
+    bottom: -10px;
+  }
+}
+.swiper-button-prev {
+  background: url("../../assets/images/arrow2.png");
+  rotate: 180deg;
+  background-size: contain;
+  left: 50%;
+  margin-left: -50px;
+}
+.swiper-button-next {
+  background: url("../../assets/images/arrow2.png");
+  background-size: contain;
+  right: 50%;
+  margin-right: -50px;
 }
 </style>

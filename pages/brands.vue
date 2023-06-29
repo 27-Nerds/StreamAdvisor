@@ -292,7 +292,7 @@ export default {
       z-index: 1;
       &-container {
         position: relative;
-        padding-right: 120px;
+        padding-right: 100px;
       }
       &-small {
         position: absolute;
@@ -336,7 +336,7 @@ export default {
     }
     &__item {
       padding: 20px 32px;
-      width: 350px;
+      width: 360px;
 
       img {
         width: 140px;
@@ -443,7 +443,7 @@ export default {
       }
       &__circle {
         &-container {
-          padding-right: 50px;
+          padding-right: 25px;
         }
       }
       &__item {

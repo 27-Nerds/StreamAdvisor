@@ -82,7 +82,7 @@ export default {
   .cases-block__background-1 {
     background: linear-gradient(240.57deg, #3662FF 19.66%, rgba(255, 255, 255, 0) 134.65%);
     position: absolute;
-    bottom: 100px;
+    bottom: 200px;
     left: 0;
     filter: blur(94px);
     transform: rotate(-128.97deg);
@@ -95,7 +95,7 @@ export default {
     filter: blur(100px);
     transform: rotate(-128.97deg);
     position: absolute;
-    bottom: 200px;
+    bottom: 300px;
     left: 150px;
     width: 180.58px;
     height: 582.67px;
