@@ -27,7 +27,8 @@ export default {
   background-repeat: no-repeat;
   background-position: center bottom;
   padding-bottom: 180px;
-  padding-top: 100px;
+  //padding-top: 100px;
+  padding-top: 0 !important;
   background-size: 1300px;
   position: relative;
   &-wrapper {

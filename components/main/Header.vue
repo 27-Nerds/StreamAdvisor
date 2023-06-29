@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-wrapper">
-      <h1 class="header-title">Коли бренд зустрічається з стрімерами</h1>
+      <h1 class="header-title">Коли бренд зустрічається зі стрімерами</h1>
       <div class="header-video">
         <div class="header-video-block">
           <iframe width="100%" height="100%"

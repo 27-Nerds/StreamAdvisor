@@ -9,13 +9,7 @@
       <div class="backgrounds">
         <div class="work-block__backgrounds">
           <Work />
-          <Partners />
-<!--          <div class="work-block__line" />-->
-<!--          <div class="work-block__ellipse"/>-->
         </div>
-        <Cases />
-        <div class="cases-block__background-1" />
-        <div class="cases-block__background-2"/>
       </div>
       <Contact />
     </div>

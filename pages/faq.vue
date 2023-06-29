@@ -7,7 +7,7 @@ const questions = reactive([
   {
     title: 'Що таке StreamAdvisor як він працює?',
     answer: 'StreamAdvisor — це сервіс, що дозволяє малим і великим стрімерам монетизувати свій контент за допомогою спонсорства у вигляді реклами, яка автоматично з\'являється в ефірі стрімера протягом певного періоду часу.',
-    isExpanded: true // Initial value
+    isExpanded: false // Initial value
   },
   {
     title: 'На яких платформах працює StreamAdvisor?',

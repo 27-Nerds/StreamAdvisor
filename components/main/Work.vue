@@ -71,7 +71,7 @@ export default {
 
     }
     img {
-      width: 200px;
+      width: 140px;
       margin-right: 16px;
     }
     p {
@@ -86,6 +86,12 @@ export default {
 @media screen and (max-width: 1920px) {
   .work {
     padding-bottom: 215px;
+    &-block {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
   }
 }
 
@@ -124,9 +130,10 @@ export default {
   .work {
     padding-bottom: 160px;
     &-block {
+      padding: 16px 0 16px 16px;
       img {
-        width: 120px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
       }
     }
   }
@@ -142,10 +149,6 @@ export default {
       p {
         font-size: 24px;
       }
-      img {
-        width: 120px;
-        height: 120px;
-      }
     }
   }
 }
@@ -158,10 +161,6 @@ export default {
 @media screen and (max-width: 768px) {
   .work {
     &-block {
-      img {
-        width: 100px;
-        height: 100px;
-      }
       p {
         font-size: 20px;
       }
@@ -177,14 +176,14 @@ export default {
       margin-bottom: 30px;
     }
     &-block {
-      flex-direction: column;
+      align-items: center;
+      padding-right: 16px;
       img {
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
       }
       p {
-        text-align: center;
-        font-size: 20px;
+        font-size: 16px;
       }
     }
   }

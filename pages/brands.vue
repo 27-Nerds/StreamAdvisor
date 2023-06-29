@@ -274,6 +274,9 @@ export default {
     }
   }
   &-info {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     &__wrapper {
       display: flex;
       justify-content: center;
@@ -292,7 +295,7 @@ export default {
       z-index: 1;
       &-container {
         position: relative;
-        padding-right: 100px;
+        margin-right: 100px;
       }
       &-small {
         position: absolute;
@@ -331,12 +334,12 @@ export default {
     }
     &__block {
       display: flex;
-      max-width: 720px;
+      //max-width: 720px;
       flex-wrap: wrap;
     }
     &__item {
       padding: 20px 32px;
-      width: 360px;
+      width: 50%;
 
       img {
         width: 140px;
@@ -438,12 +441,12 @@ export default {
     }
     &-info {
       &__wrapper {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
       }
       &__circle {
         &-container {
-          padding-right: 25px;
+          margin-right: 25px;
         }
       }
       &__item {
@@ -497,21 +500,21 @@ export default {
   .brands {
     &-info {
       &__wrapper {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
         flex-direction: column;
       }
       &__circle {
         &-container {
-          padding-right: 0px;
+          margin-right: 0px;
         }
       }
       &__block {
         margin-top: 40px;
-        max-width: 800px;
+        max-width: 880px;
       }
       &__item {
-        width: 400px;
+        width: 440px;
         padding: 24px 40px;
         img {
           width: 72px;
