@@ -14,7 +14,7 @@
             v-model="youtube"
             label="Назва каналу Youtube"
             placeholder="Random"
-            :isValid="isYoutubeValid"
+            :isValid="true"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
@@ -22,7 +22,7 @@
             v-model="discord"
             label="Discord ID"
             placeholder="random#1234"
-            :isValid="isDiscordValid"
+            :is-valid="true"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
@@ -30,7 +30,7 @@
             v-model="twitch"
             label="Назва каналу Twitch"
             placeholder="Random"
-            :isValid="isTwitchValid"
+            :is-valid="true"
         />
       </div>
       <div class="content-form__element w-100 p-0">
