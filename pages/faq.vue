@@ -64,28 +64,6 @@ function handleAccordion(selectedIndex) {
 }
 </script>
 
-<script>
-import { Collapse } from 'vue-collapsed';
-export default {
-  components: {
-    Collapse
-  },
-  methods: {
-    beforeEnter: function(el) {
-      el.style.height = '0';
-    },
-    enter: function(el) {
-      el.style.height = el.scrollHeight + 'px';
-    },
-    beforeLeave: function(el) {
-      el.style.height = el.scrollHeight + 'px';
-    },
-    leave: function(el) {
-      el.style.height = '0';
-    },
-  }
-}
-</script>
 
 <template>
   <div class="info">
@@ -103,18 +81,11 @@ export default {
               <img :src="selectedQuestion === index ? Minus : Plus" alt="btn">
             </div>
           </button>
-          <transition name="accordion"
-            @enter="beforeEnter"
-            @after-enter="enter"
-            @before-leave="beforeLeave"
-            @after-leave="leave"
-          >
-            <div class="body info-accordion__collapse" v-if="selectedQuestion === index">
-              <div class="body-inner">
-                {{ question.answer }}
-              </div>
+          <div class="body info-accordion__collapse" v-show="selectedQuestion === index">
+            <div class="body-inner">
+              {{ question.answer }}
             </div>
-          </transition>
+          </div>
         </div>
       </div>
     </div>
@@ -130,7 +101,10 @@ export default {
 .accordion .body {
   overflow: hidden;
   color: #ffffff;
-  //transition: height .35s ease;
+  transition: height .35s ease;
+}
+.info-accordion__button {
+  cursor: pointer;
 }
 
 .accordion .body-inner {
@@ -139,37 +113,7 @@ export default {
   /*   white-space: pre-wrap; */
 }
 
-.accordion-enter-active, {
-  will-change: height;
-  transition: all 0.25s ease;
-  -webkit-transition: all 0.3s ease 0s;
-}
-.accordion-leave-active {
-  will-change: height;
-  transition: all 0.25s ease;
-  -webkit-transition: all 0.3s ease 0s;
-}
-.accordion-enter, .accordion-leave-to {
-  height: 0 !important;
-}
 
-@keyframes accordion-enter {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 100%;
-  }
-}
-
-@keyframes accordion-leave {
-  0% {
-    height: 100%;
-  }
-  100% {
-    height: 0%;
-  }
-}
 
 </style>
 
