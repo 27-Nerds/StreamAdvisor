@@ -355,6 +355,9 @@ export default {
       top: 50%;
       transform: translate(-50%, -65%);
       width: 100%;
+      img {
+        width: 100%;
+      }
     }
     &__bg-image {
       width: 100%;

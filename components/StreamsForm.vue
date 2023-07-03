@@ -5,7 +5,6 @@
         <BaseInput
             v-model="email"
             label="Електронна пошта"
-            placeholder="Random@gmail.com"
             :isValid="isEmailValid"
         />
       </div>
@@ -13,7 +12,6 @@
         <BaseInput
             v-model="youtube"
             label="Назва каналу Youtube"
-            placeholder="Random"
             :isValid="true"
         />
       </div>
@@ -21,7 +19,6 @@
         <BaseInput
             v-model="discord"
             label="Discord ID"
-            placeholder="random#1234"
             :is-valid="true"
         />
       </div>
@@ -29,7 +26,6 @@
         <BaseInput
             v-model="twitch"
             label="Назва каналу Twitch"
-            placeholder="Random"
             :is-valid="true"
         />
       </div>
@@ -37,7 +33,6 @@
         <BaseTextarea
             v-model="message"
             label="Повідомлення"
-            placeholder="Ваше повідомлення"
             :isValid="isMessageValid"
         />
       </div>

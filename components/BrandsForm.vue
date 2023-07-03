@@ -6,7 +6,6 @@
             v-model="user"
             label="ПІБ"
             :is-valid="isUserValid"
-            placeholder="Василь Шевченко"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
@@ -14,7 +13,6 @@
             v-model="email"
             :is-valid="isEmailValid"
             label="Електронна пошта"
-            placeholder="Random@gmail.com"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
@@ -22,7 +20,6 @@
             v-model="job"
             :is-valid="isJobValid"
             label="Назва посади"
-            placeholder="Маркетолог"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
@@ -30,7 +27,6 @@
             v-model="companyName"
             :is-valid="isCompanyNameValid"
             label="Назва компанії"
-            placeholder="Василь та Партнери"
         />
       </div>
       <div class="content-form__element w-50 w-m-100">
@@ -38,7 +34,7 @@
             v-model="phoneNumber"
             :is-valid="isPhoneNumberValid"
             label="Номер телефону"
-            placeholder="+380 (00) 000-00-00"
+            placeholder="+380"
         />
       </div>
       <div class="content-form__element w-100 p-0">
@@ -46,7 +42,6 @@
             v-model="message"
             :is-valid="isMessageValid"
             label="Повідомлення"
-            placeholder="Ваше повідомлення"
         />
       </div>
       <VButton class="outline-primary form-button">
