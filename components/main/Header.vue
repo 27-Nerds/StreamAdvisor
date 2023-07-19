@@ -5,7 +5,7 @@
       <div class="header-video">
         <div class="header-video-block">
           <iframe width="100%" height="100%"
-                  src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                  src="https://www.youtube.com/embed/xGKEWQAjFx0">
           </iframe>
         </div>
       </div>
