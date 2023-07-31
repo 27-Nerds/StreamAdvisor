@@ -11,8 +11,17 @@ export default defineNuxtConfig({
     ],
     modules: [
         '@nuxtjs/device',
-        'nuxt-gtag'
+        'nuxt-gtag',
+        '@nuxtjs/robots'
     ],
+    robots: {
+        rules: {
+            UserAgent: '*',
+            Allow: '/',
+            Host: 'https://streamadvisor.com.ua',
+            Sitemap: 'https://streamadvisor.com.ua/sitemap.xml'
+        }
+    },
     gtag: {
         id: 'GTM-TRBQMC7'
     }
