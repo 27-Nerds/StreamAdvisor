@@ -15,7 +15,7 @@ export default {
   components: {VButton},
   methods: {
     register() {
-      window.open('https://streamer.instreamly.com/register/', 'blank')
+      window.open('https://streamadvisor-streamer.streamcoi.com/register/', 'blank')
     },
   }
 }

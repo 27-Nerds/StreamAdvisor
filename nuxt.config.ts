@@ -4,6 +4,7 @@ import { defineNuxtConfig } from "nuxt/config";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // @ts-ignore
+    ssr: true,
     plugins: [
         {src: './plugins/mask', ssr: false},
         {src: './plugins/kinesis', ssr: false},

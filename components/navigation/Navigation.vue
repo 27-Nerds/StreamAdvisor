@@ -89,11 +89,11 @@ export default {
   },
   methods: {
     register() {
-      window.open('https://streamer.instreamly.com/register/', 'blank')
+      window.open('https://streamadvisor-streamer.streamcoi.com/register/', 'blank')
       this.showNav = false
     },
     login() {
-      window.open('https://streamer.instreamly.com/login/', 'blank')
+      window.open('https://streamadvisor-streamer.streamcoi.com/login', 'blank')
       this.showNav = false
     },
     checkWindowObject() {
