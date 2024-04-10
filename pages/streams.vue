@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     register() {
-      window.open('https://streamadvisor-streamer.streamcoi.com/register/', 'blank')
+      window.open('https://streamadvisor.instreamly.com/', 'blank')
     },
     showMessageHandler() {
       this.showMessage = true
