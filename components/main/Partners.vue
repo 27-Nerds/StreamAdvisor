@@ -1,13 +1,19 @@
 <template>
-  <div class="partners">
+  <div class="partners" id="partners">
     <div class="partners-wrapper">
       <h3 class="partners-header">Наші партнери</h3>
       <div class="partners-images">
-        <img src="../../assets/images/nova.svg" alt="nova post">
-        <img src="../../assets/images/silpo.svg" alt="siplo">
-        <img src="../../assets/images/epic.svg" alt="epicenter">
-        <img src="../../assets/images/allo.svg" alt="allo">
-        <img src="../../assets/images/rozetka.svg" alt="rozetka">
+        <NuxtImg src="/partners/dominos.svg" alt="dominos"/>
+        <NuxtImg src="/partners/doritos.svg" alt="doritos"/>
+        <NuxtImg src="/partners/energy-black.svg" alt="energy-black"/>
+        <NuxtImg src="/partners/exmo.svg" alt="exmo"/>
+        <NuxtImg src="/partners/kfc.svg" alt="kfc"/>
+        <NuxtImg src="/partners/kite.svg" alt="kite"/>
+        <NuxtImg src="/partners/logitech.svg" alt="logitech"/>
+        <NuxtImg src="/partners/optima.svg" alt="optima"/>
+        <NuxtImg src="/partners/oreo.svg" alt="oreo"/>
+        <NuxtImg src="/partners/pepsi.svg" alt="pepsi"/>
+        <NuxtImg src="/partners/uklon.svg" alt="uklon"/>
       </div>
     </div>
   </div>
@@ -21,10 +27,13 @@ export default {
 
 <style scoped lang="scss">
 .partners {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   position: relative;
   &-wrapper {
-    padding: 0px 0 40px;
+    padding: 0px 0 20px;
   }
   &-header {
     font-style: normal;
@@ -37,9 +46,10 @@ export default {
   &-images {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     img {
-      width: 250px;
-      margin: 0 32px;
+      height: 90px;
+      margin: 24px 32px;
     }
   }
 }
@@ -49,7 +59,7 @@ export default {
     &-images {
       img {
         width: 184px;
-        margin: 0 28px;
+        margin: 4px 28px;
       }
     }
   }
@@ -61,7 +71,7 @@ export default {
       flex-wrap: wrap;
       img {
         width: 148px;
-        margin: 0 28px;
+        margin: 4px 28px;
       }
     }
   }
@@ -80,6 +90,7 @@ export default {
     &-images {
       img {
         width: 80px;
+        height: auto;
         margin: 20px 16px;
       }
     }

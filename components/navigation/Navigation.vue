@@ -1,17 +1,23 @@
 <template>
   <nav class="navigation" ref="navigation">
-    <NuxtLink class="navigation-logo" to="/">
+    <NuxtLink class="navigation-logo" to="/" @click="navigationClick('home')">
       <img src="../../assets/images/navigation/Logo.svg" alt="logo">
     </NuxtLink>
     <div class="navigation-list">
-      <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/streams">
+      <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/streams" @click="navigationClick('streams')">
         Стрімерам
       </NuxtLink>
-      <NuxtLink class="navigation-list__item"  :activeClass="'active'" to="/brands">
+      <NuxtLink class="navigation-list__item"  :activeClass="'active'" to="/brands" @click="navigationClick('brands')">
         Брендам
       </NuxtLink>
-      <NuxtLink class="navigation-list__item"  :activeClass="'active'" to="/faq">
+      <NuxtLink class="navigation-list__item" to="/#partners" @click="navigationClick('partners')">
+        Партнери
+      </NuxtLink>
+      <NuxtLink class="navigation-list__item"  :activeClass="'active'" to="/faq" @click="navigationClick('faq')">
         FAQ
+      </NuxtLink>
+      <NuxtLink class="navigation-list__item"  :activeClass="'active'" to="/terms" @click="navigationClick('terms')">
+        Terms of use
       </NuxtLink>
     </div>
     <div class="navigation-button">
@@ -32,25 +38,28 @@
     <div class="mobile-navigation" v-show="showNav">
       <div class="mobile-navigation-blur" v-if="showNav" @click="showNav = false"></div>
       <div class="mobile-navigation-wrapper" :class="{ active: showNav }">
-        <NuxtLink class="mobile-navigation-logo" to="/">
+        <NuxtLink class="mobile-navigation-logo" to="/" @click="navigationClick('home')">
           <img src="../../assets/images/navigation/Logo.svg" alt="logo">
         </NuxtLink>
         <div class="mobile-navigation-list">
-          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/streams" @click="showNav = false">
+          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/streams" @click="navigationClick('streams')">
             Стрімерам
           </NuxtLink>
-          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/brands" @click="showNav = false">
+          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/brands" @click="navigationClick('brands')">
             Брендам
           </NuxtLink>
-          <NuxtLink class="navigation-list__item" :activeClass="'active'" to="/faq" @click="showNav = false">
+          <NuxtLink class="navigation-list__item" to="/#partners" @click="navigationClick('partners')">
+            Партнери
+          </NuxtLink>
+          <NuxtLink class="navigation-list__item"  :activeClass="'active'" to="/faq" @click="navigationClick('faq')">
             FAQ
           </NuxtLink>
         </div>
         <div class="mobile-navigation-policy">
-          <NuxtLink class="navigation-policy-item" to="/policy" :activeClass="'active'" @click="showNav = false">
+          <NuxtLink class="navigation-policy-item" to="/policy" :activeClass="'active'" @click="navigationClick('privacy')">
             Privacy Policy
           </NuxtLink>
-          <NuxtLink class="navigation-policy-item" to="terms" :activeClass="'active'" @click="showNav = false">
+          <NuxtLink class="navigation-policy-item" to="terms" :activeClass="'active'" @click="navigationClick('terms')">
             Terms of use
           </NuxtLink>
         </div>
@@ -72,6 +81,12 @@ import VButton from "../elements/VButton";
 export default {
   name: "Navigation",
   components: {VButton},
+  setup () {
+    const trackEvent = useTrackEvent
+    return {
+      trackEvent
+    }
+  },
   data() {
     return {
       showNav: false
@@ -88,13 +103,19 @@ export default {
     }
   },
   methods: {
+    navigationClick (pageType) {
+      this.showNav = false
+      this.trackEvent('navigation-click', { page: pageType })
+    },
     register() {
       window.open('https://streamadvisor.instreamly.com/', 'blank')
       this.showNav = false
+      this.trackEvent('authorization', { method: 'registration' })
     },
     login() {
       window.open('https://streamadvisor.instreamly.com/', 'blank')
       this.showNav = false
+      this.trackEvent('authorization', { method: 'login' })
     },
     checkWindowObject() {
       if (typeof window === 'undefined') return false

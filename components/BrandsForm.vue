@@ -64,6 +64,12 @@ export default {
     BasePhoneInput,
     VButton
   },
+  setup () {
+    const trackEvent = useTrackEvent
+    return {
+      trackEvent
+    }
+  },
   data() {
     return {
       email: '',
@@ -112,6 +118,7 @@ export default {
       if (response.data.ok) {
         this.$emit('showMessage', true)
         this.$refs.form.reset()
+        this.trackEvent('form-submitted', { type: 'streams' })
       }
     }
   }

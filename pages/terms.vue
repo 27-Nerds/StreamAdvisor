@@ -138,7 +138,7 @@
         <p class="info-text">У разі невиконання або неналежного виконання Договору StreamAdvisor, Стрімер може подати скаргу. Скарги слід подавати:</p>
         <ul class="info-list">
           <li class="info-list__item">за допомогою контактної форми на сайті www.streamadvisor.com.ua;</li>
-          <li class="info-list__item">електронною поштою на таку адресу: contact@streamadvisor.com.ua;
+          <li class="info-list__item">електронною поштою на таку адресу: community@streamadvisor.com.ua;
             або</li>
           <li class="info-list__item">письмово на адресу місцезнаходження StreamAdvisor.</li>
         </ul>
@@ -185,7 +185,7 @@
         <h2 class="info-subtitle">Комунікація</h2>
         <p class="info-text">Вся комунікація між Сторонами в електронній формі за адресами електронної пошти:</p>
         <ul class="info-list">
-          <li class="info-list__item">для StreamAdvisor – contact@streamadvisor.com.ua</li>
+          <li class="info-list__item">для StreamAdvisor – community@streamadvisor.com.ua</li>
           <li class="info-list__item">Для Стрімера – надається під час створення облікового запису.</li>
         </ul>
         <p class="info-text">Сторони зобов'язуються своєчасно повідомляти про будь-які зміни адрес обслуговування або інших даних, інакше будь-яке повідомлення, надіслане за останньою вказаною адресою обслуговування, вважається належним чином врученим.</p>

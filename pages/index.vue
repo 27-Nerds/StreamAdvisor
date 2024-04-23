@@ -9,6 +9,7 @@
       <div class="backgrounds">
         <div class="work-block__backgrounds">
           <Work />
+          <Partners/>
         </div>
       </div>
       <Contact />

@@ -5,16 +5,15 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
     // @ts-ignore
     ssr: true,
+    app: {
+        pageTransition: { name: 'page' }
+    },
     plugins: [
         {src: './plugins/mask', ssr: false},
         {src: './plugins/kinesis', ssr: false},
         {src: './plugins/apiInstance', ssr: false}
     ],
-    modules: [
-        '@nuxtjs/device',
-        'nuxt-gtag',
-        '@nuxtjs/robots'
-    ],
+    modules: ['@nuxtjs/device', 'nuxt-gtag', '@nuxtjs/robots', "@nuxt/image"],
     robots: {
         rules: {
             UserAgent: '*',
@@ -24,6 +23,6 @@ export default defineNuxtConfig({
         }
     },
     gtag: {
-        id: 'GTM-TRBQMC7'
+        id: 'G-QGFNVYP4FP'
     }
 })

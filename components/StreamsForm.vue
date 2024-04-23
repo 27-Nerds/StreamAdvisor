@@ -56,6 +56,12 @@ export default {
     VButton,
     VMessage
   },
+  setup () {
+    const trackEvent = useTrackEvent
+    return {
+      trackEvent
+    }
+  },
   data() {
     return {
       email: '',
@@ -100,6 +106,7 @@ export default {
       const response = await this.$axios.post('https://formspree.io/f/mnqkaglw', formData)
       if (response.data.ok) {
         this.$emit('showMessage', true)
+        this.trackEvent('form-submitted', { type: 'streams' })
         this.$refs.form.reset()
       }
     }

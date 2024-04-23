@@ -4,15 +4,15 @@
     <div class="footer-info">
       <span class="footer-info__company">
         <img src="../assets/images/copy.svg" alt="">
-        2023 StreamAdvisor
+        2024 StreamAdvisor
       </span>
       <span class="footer-info__email">welcome@streamadvisor.com.ua</span>
     </div>
     <div class="footer-links">
-      <NuxtLink class="footer-link" to="/policy">
+      <NuxtLink class="footer-link" to="/policy" @click="navigationClick">
         Privacy Policy
       </NuxtLink>
-      <NuxtLink class="footer-link" to="/terms">
+      <NuxtLink class="footer-link" to="/terms" @click="navigationClick">
         Terms of use
       </NuxtLink>
     </div>
@@ -21,7 +21,18 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  setup () {
+    const trackEvent = useTrackEvent
+    return {
+      trackEvent
+    }
+  },
+  methods: {
+    navigationClick (pageType) {
+      this.trackEvent('navigation-click', { page: pageType })
+    }
+  }
 }
 </script>
 

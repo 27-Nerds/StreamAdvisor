@@ -9,7 +9,7 @@
       >
     </div>
     <div class="card-info">
-      <NuxtLink :to="to">
+      <NuxtLink :to="`/${to}`" @click="navigationClick(to)">
         <div class="card-info__label v-button outline-primary">
           <span>{{ label }}</span>
         </div>
@@ -22,6 +22,10 @@
 
 <script setup>
 const props = defineProps(['image', 'label', 'title', 'description', 'to'])
+
+const navigationClick = (pageType) => {
+  useTrackEvent('navigation-click', { page: pageType })
+}
 </script>
 
 <script>

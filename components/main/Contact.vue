@@ -13,9 +13,16 @@ import VButton from "../elements/VButton";
 export default {
   name: "Contact",
   components: {VButton},
+  setup () {
+    const trackEvent = useTrackEvent
+    return {
+      trackEvent
+    }
+  },
   methods: {
     register() {
       window.open('https://streamadvisor.instreamly.com/', 'blank')
+      this.trackEvent('authorization', { method: 'registration' })
     },
   }
 }
@@ -27,8 +34,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center bottom;
   padding-bottom: 180px;
-  //padding-top: 100px;
-  padding-top: 0 !important;
+  padding-top: 100px !important;
   background-size: 1300px;
   position: relative;
   &-wrapper {

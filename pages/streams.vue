@@ -8,7 +8,7 @@
           <p>Ми надаємо можливість заробляти справжні гроші на стрімах. Обирай бренди, з якими хочеш співпрацювати, а наша система автоматично виведе рекламу під час трансляції.</p>
         </div>
         <div class="streams-header__image">
-          <img src="../assets/images/2048/streamers/1.png" alt="">
+          <NuxtImg src="/2048/streamers/1.png" alt=""/>
         </div>
         <p class="streams-header__info-description--mobile">Ми надаємо можливість заробляти справжні гроші на стрімах. Обирай бренди, з якими хочеш співпрацювати, а наша система автоматично виведе рекламу під час трансляції.</p>
       </div>
@@ -20,9 +20,9 @@
               <div class="streams-video__block-gradient-2" />
               <div class="streams-video__block">
                 <div class="streams-video__block-content">
-                  <img src="../assets/images/2048/streamers/icons/Twitch-4.svg" class="streams-video__block-images" alt="">
-                  <img src="../assets/images/2048/streamers/icons/youtube.svg" class="streams-video__block-images" alt="">
-                  <img src="../assets/images/2048/streamers/video-png.png" alt="">
+                  <NuxtImg src="/2048/streamers/icons/Twitch-4.svg" class="streams-video__block-images" alt=""/>
+                  <NuxtImg src="/2048/streamers/icons/youtube.svg" class="streams-video__block-images" alt=""/>
+                  <NuxtImg src="/2048/streamers/video-png.png" alt=""/>
 <!--                  <div class="streams-video__controllers">-->
 <!--                    <div class="streams-video__controllers-button">-->
 <!--                      <img src="../assets/images/2048/streamers/player-button.svg" alt="">-->
@@ -91,6 +91,12 @@ export default {
     StarsLayout,
     StreamsForm
   },
+  setup () {
+    const trackEvent = useTrackEvent
+    return {
+      trackEvent
+    }
+  },
   data() {
     return {
       showMessage:false
@@ -99,6 +105,7 @@ export default {
   methods: {
     register() {
       window.open('https://streamadvisor.instreamly.com/', 'blank')
+      this.trackEvent('authorization', { method: 'registration' })
     },
     showMessageHandler() {
       this.showMessage = true
