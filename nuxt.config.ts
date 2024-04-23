@@ -13,7 +13,7 @@ export default defineNuxtConfig({
         {src: './plugins/kinesis', ssr: false},
         {src: './plugins/apiInstance', ssr: false}
     ],
-    modules: ['@nuxtjs/device', 'nuxt-gtag', '@nuxtjs/robots', "@nuxt/image"],
+    modules: ['@nuxtjs/device', 'nuxt-gtag', '@nuxtjs/robots', "@nuxt/image", '@zadigetvoltaire/nuxt-gtm'],
     robots: {
         rules: {
             UserAgent: '*',
@@ -23,6 +23,9 @@ export default defineNuxtConfig({
         }
     },
     gtag: {
-        id: 'G-QGFNVYP4FP'
+        id: 'G-QGFNVYP4FP',
+    },
+    gtm: {
+        id: 'GTM-WHBZVCZ9'
     }
 })
