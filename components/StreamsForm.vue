@@ -106,7 +106,7 @@ export default {
       const response = await this.$axios.post('https://formspree.io/f/mnqkaglw', formData)
       if (response.data.ok) {
         this.$emit('showMessage', true)
-        this.trackEvent('form-submitted', { type: 'streams' })
+        this.trackEvent('form_submitted', { type: 'streams' })
         this.$refs.form.reset()
       }
     }

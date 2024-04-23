@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     navigationClick (pageType) {
-      this.trackEvent('navigation-click', { page: pageType })
+      this.trackEvent('navigation_click', { page: pageType })
     }
   }
 }

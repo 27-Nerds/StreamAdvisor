@@ -24,7 +24,7 @@
 const props = defineProps(['image', 'label', 'title', 'description', 'to'])
 
 const navigationClick = (pageType) => {
-  useTrackEvent('navigation-click', { page: pageType })
+  useTrackEvent('navigation_click', { page: pageType })
 }
 </script>
 

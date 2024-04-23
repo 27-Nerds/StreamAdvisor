@@ -23,6 +23,6 @@ export default defineNuxtConfig({
         }
     },
     gtag: {
-        id: 'G-QGFNVYP4FP'
+        id: 'GTM-WHBZVCZ9'
     }
 })

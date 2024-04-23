@@ -118,7 +118,7 @@ export default {
       if (response.data.ok) {
         this.$emit('showMessage', true)
         this.$refs.form.reset()
-        this.trackEvent('form-submitted', { type: 'streams' })
+        this.trackEvent('form_submitted', { type: 'streams' })
       }
     }
   }
