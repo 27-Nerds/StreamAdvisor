@@ -20,9 +20,9 @@
               <div class="streams-video__block-gradient-2" />
               <div class="streams-video__block">
                 <div class="streams-video__block-content">
-                  <NuxtImg src="/2048/streamers/icons/Twitch-4.svg" class="streams-video__block-images" alt=""/>
-                  <NuxtImg src="/2048/streamers/icons/youtube.svg" class="streams-video__block-images" alt=""/>
-                  <NuxtImg src="/2048/streamers/video-png.png" alt=""/>
+                  <img src="/2048/streamers/icons/Twitch-4.svg" class="streams-video__block-images" alt=""/>
+                  <img src="/2048/streamers/icons/youtube.svg" class="streams-video__block-images" alt=""/>
+                  <img src="/2048/streamers/video-png.png" alt=""/>
 <!--                  <div class="streams-video__controllers">-->
 <!--                    <div class="streams-video__controllers-button">-->
 <!--                      <img src="../assets/images/2048/streamers/player-button.svg" alt="">-->
