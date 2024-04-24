@@ -31,7 +31,7 @@ export default {
 <style scoped lang="scss">
 .work {
   max-width: 800px;
-  padding: 15px 15px 250px 15px;
+  padding: 15px 15px 150px 15px;
   margin-left: auto;
   margin-right: auto;
   &-wrapper {
@@ -85,7 +85,7 @@ export default {
 
 @media screen and (max-width: 1920px) {
   .work {
-    padding-bottom: 215px;
+    padding-bottom: 115px;
     &-block {
       img {
         width: 120px;
@@ -116,7 +116,7 @@ export default {
 
 @media screen and (max-width: 1650px) {
   .work {
-    padding-bottom: 160px;
+    padding-bottom: 60px;
     &-block {
       img {
         width: 100px;
@@ -128,7 +128,7 @@ export default {
 
 @media screen and (max-width: 1440px) {
   .work {
-    padding-bottom: 160px;
+    padding-bottom: 60px;
     &-block {
       padding: 16px 0 16px 16px;
       img {
@@ -155,7 +155,7 @@ export default {
 
 @media screen and (max-width: 1280px) {
   .work {
-    padding-bottom: 120px;
+    padding-bottom: 20px;
   }
 }
 @media screen and (max-width: 768px) {

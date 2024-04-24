@@ -32,6 +32,7 @@ export default {
   margin-right: auto;
   text-align: center;
   position: relative;
+  padding-top: 100px;
   &-wrapper {
     padding: 0px 0 20px;
   }

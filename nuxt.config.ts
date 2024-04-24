@@ -26,6 +26,6 @@ export default defineNuxtConfig({
         id: 'G-QGFNVYP4FP',
     },
     gtm: {
-        id: 'GTM-WHBZVCZ9'
+        id: 'GTM-TRBQMC7'
     }
 })
